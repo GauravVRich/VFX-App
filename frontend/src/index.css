@@ -1,0 +1,70 @@
+/* 1. Initialize Tailwind */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* 2. Global resets and theme */
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #111827; /* Tailwind gray-900 */
+  color: #ffffff;
+  overflow-x: hidden;
+}
+
+/* 3. Custom Scrollbar (for the frame strip at the bottom) */
+::-webkit-scrollbar {
+  height: 8px;
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #1f2937; /* gray-800 */
+}
+
+::-webkit-scrollbar-thumb {
+  background: #4b5563; /* gray-600 */
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #6b7280; /* gray-500 */
+}
+
+/* 4. Smooth UI Transitions */
+/* This ensures the layout shift happens elegantly when 'frames.length > 0' */
+.transition-all {
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 500ms;
+}
+
+/* 5. Image Preview Styling */
+input[type="file"]::file-selector-button {
+  background-color: #374151;
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 0.375rem;
+  border: none;
+  cursor: pointer;
+  margin-right: 1rem;
+  transition: background 0.2s;
+}
+
+input[type="file"]::file-selector-button:hover {
+  background-color: #4b5563;
+}
+
+/* 6. Pulse effect for the "Generating" state */
+@keyframes pulse-subtle {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.7; }
+}
+
+.generating-text {
+  animation: pulse-subtle 2s infinite;
+}

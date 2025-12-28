@@ -1,0 +1,47 @@
+# --- OS Files ---
+.DS_Store
+Thumbs.db
+*.swp
+
+# --- Backend (Python) ---
+backend/__pycache__/
+backend/*.py[cod]
+backend/$py.class
+backend/.env
+backend/.pytest_cache/
+
+# Ignore the virtual environment
+backend/venv/
+backend/env/
+backend/.venv/
+
+# Ignore uploaded images and generated frames
+backend/upload/*
+# But keep the folder itself
+!backend/upload/.gitkeep
+
+# --- AI/ML Specific ---
+# Ignore large model weights if you download them locally
+*.ckpt
+*.safetensors
+*.pth
+*.bin
+
+# --- Frontend (Node.js/React) ---
+frontend/node_modules/
+frontend/build/
+frontend/.env
+frontend/.env.local
+frontend/.env.development.local
+frontend/.env.test.local
+frontend/.env.production.local
+frontend/npm-debug.log*
+frontend/yarn-debug.log*
+frontend/yarn-error.log*
+frontend/.eslintcache
+
+# --- Editors ---
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
